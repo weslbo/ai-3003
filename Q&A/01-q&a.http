@@ -1,0 +1,15 @@
+POST {{$dotenv PredictionURL}}/language/:query-knowledgebases?projectName=LearnFAQ&api-version=2021-10-01&deploymentName=production
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+Content-Type: application/json
+
+{
+    "top":3,
+    "question":"What is a learning path?",
+    "includeUnstructuredSources":true,
+    "confidenceScoreThreshold":0.2,
+    "answerSpanRequest":{
+        "enable":true,
+        "topAnswersWithSpan":1,
+        "confidenceScoreThreshold":0.2
+    }
+}

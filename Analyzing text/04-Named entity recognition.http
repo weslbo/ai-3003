@@ -1,0 +1,30 @@
+// Identifies entities that are mentioned in the text
+// Entities are grouped into categories and subcategories, for example:
+// - Person
+// - Location
+// - DateTime
+// - Organization
+// - Address
+// - Email
+// - URL
+// - Others…
+
+POST {{$dotenv LanguageEndpoint}}/language/:analyze-text?api-version=2023-11-15-preview
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+
+{
+    "kind": "EntityRecognition",
+    "parameters": {
+        "modelVersion": "latest"
+    },
+    "analysisInput": {
+        "documents": [
+            {
+            "language": "en",
+            "id": "1",
+            "text": "Joe went to London on Saturday"
+            }
+        ]
+    }
+}

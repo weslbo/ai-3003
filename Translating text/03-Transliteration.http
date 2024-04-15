@@ -1,0 +1,8 @@
+POST {{$dotenv TextTranslationEndpoint}}/transliterate?api-version=3.0&language=ja&fromScript=Jpan&toScript=Latn
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+Ocp-Apim-Subscription-Region: {{$dotenv Ocp-Apim-Subscription-Region}}
+
+[
+    { 'Text' : 'こんにちは' }
+]

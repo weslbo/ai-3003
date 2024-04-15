@@ -1,0 +1,26 @@
+// Determine the language in which text is written
+// Often useful as a pre-cursor to further analysis that requires a known language
+
+POST {{$dotenv LanguageEndpoint}}/language/:analyze-text?api-version=2023-11-15-preview
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+
+{
+    "kind": "LanguageDetection",
+    "parameters": {
+        "modelVersion": "latest"
+    },
+    "analysisInput":{
+        "documents": [
+          {
+            "countryHint": "US",
+            "id": "1",
+            "text": "Hello world"
+          },
+          {
+            "id": "2",
+            "text": "Bonjour tout le monde"
+          }
+        ]
+    }
+}

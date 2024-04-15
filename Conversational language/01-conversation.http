@@ -1,0 +1,24 @@
+
+
+POST {{$dotenv ConversationURL}}/language/:analyze-conversations?api-version=2022-10-01-preview
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+Content-Type: application/json
+
+{
+    "kind":"Conversation",
+    "analysisInput": {
+        "conversationItem": {
+            "id":"1",
+            "text":"What's the time in Edinburgh?",
+            "modality":"text",
+            "language":"en",
+            "participantId":"1"
+        }
+    },
+    "parameters": {
+        "projectName":"Clock",
+        "verbose":true,
+        "deploymentName":"production",
+        "stringIndexType":"Utf16CodeUnit"
+    }
+}

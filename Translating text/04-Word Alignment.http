@@ -1,0 +1,8 @@
+POST {{$dotenv TextTranslationEndpoint}}/translate?api-version=3.0&from=en&to=zh&includeAlignment=true
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+Ocp-Apim-Subscription-Region: {{$dotenv Ocp-Apim-Subscription-Region}}
+
+[
+    { 'Text' : 'Smart Services' }
+]

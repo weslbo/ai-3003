@@ -1,0 +1,29 @@
+// Used to disambiguate entities of the same name
+// For example, is “Venus” a planet or a goddess?
+// Wikipedia provides the knowledge base
+// Specific article links are determined based on entity context within the text
+// “I saw Venus shining in the sky”:
+//     https://en.wikipedia.org/wiki/Venus 
+// “Venus, the goddess of beauty”: 
+//    https://en.wikipedia.org/wiki/Venus_(mythology) 
+
+
+POST {{$dotenv LanguageEndpoint}}/language/:analyze-text?api-version=2023-11-15-preview
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+
+{
+    "kind": "EntityLinking",
+    "parameters": {
+        "modelVersion": "latest"
+    },
+    "analysisInput": {
+        "documents": [
+            {
+            "language": "en",
+            "id": "1",
+            "text": "I saw Venus shining in the sky"
+            }
+        ]
+    }
+}

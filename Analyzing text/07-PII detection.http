@@ -1,0 +1,23 @@
+// Used to detect and remove sensitive information
+// Entity categories include Person, PhoneNumber, Email, Address, Credit card, and financial account identification
+// Can be used in situations like applying sensitivity labels, removing information to reduce bias, and clean data for data science
+
+POST {{$dotenv LanguageEndpoint}}/language/:analyze-text?api-version=2023-11-15-preview
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+
+{
+    "kind": "PiiEntityRecognition",
+    "parameters": {
+        "modelVersion": "latest"
+    },
+    "analysisInput": {
+        "documents":[
+            {
+            "id":"1",
+            "language": "en",
+            "text": "Call our office at 312-555-1234, or send an email to support@contoso.com"
+            }
+        ]
+    }
+}

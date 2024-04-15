@@ -1,0 +1,29 @@
+// Scores overall document sentiment and individual sentence sentiment
+// Sentence sentiment is based on confidence scores for positive, negative, and neutral
+// Overall document sentiment is based on sentences:
+// - All sentences are neutral = neutral
+// - Sentences include positive and neutral = positive
+// - Sentences include negative and neutral = negative
+// - Sentences include positive and negative = mixed
+
+
+POST {{$dotenv LanguageEndpoint}}/language/:analyze-text?api-version=2023-11-15-preview
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$dotenv Ocp-Apim-Subscription-Key}}
+
+{
+    "kind": "SentimentAnalysis",
+    "parameters": {
+        "modelVersion": "latest",
+        "opinionMining": "True"
+    },
+    "analysisInput":{
+        "documents": [
+            {
+            "language": "en",
+            "id": "1",
+            "text": "Smile! Life is good!"
+            }
+        ]
+    }
+}

@@ -27,4 +27,15 @@ This repo hosts a number of demo's in the context of training AI-3003.
 ## Required setup
 
 - Provision resources in Azure (TBC)
-- Create a .env file in each folder
+    - Provision an **Azure AI Language** resource (F0 or S)
+        - Make sure to select the **Custom question answering** block.
+        - **Azure Search** pricing tier: Free (F)
+    - Provision an **Azure AI Translator** resource (F0 or S)
+    - Create a **question answering project** [(here)](https://github.com/MicrosoftLearning/mslearn-ai-language/blob/main/Instructions/Exercises/02-qna.md#create-a-question-answering-project)
+    - Add sources to the knowledge base [(here)](https://github.com/MicrosoftLearning/mslearn-ai-language/blob/main/Instructions/Exercises/02-qna.md#add-sources-to-the-knowledge-base)
+    - Add questions to the knowledge base [(here)](https://github.com/MicrosoftLearning/mslearn-ai-language/blob/main/Instructions/Exercises/02-qna.md#edit-the-knowledge-base)
+    - Deploy the knowledge base [(here)](https://github.com/MicrosoftLearning/mslearn-ai-language/blob/main/Instructions/Exercises/02-qna.md#deploy-the-knowledge-base)
+    - Create a conversational language understanding project [(here)](https://github.com/MicrosoftLearning/mslearn-ai-language/blob/main/Instructions/Exercises/03-language-understanding.md#create-a-conversational-language-understanding-project)
+
+
+- Create a .env file in each folder and make sure the keys and endpoints are set correctly. You can use the sample.env files as a reference.
